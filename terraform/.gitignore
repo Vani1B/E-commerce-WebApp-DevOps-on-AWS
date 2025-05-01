@@ -1,0 +1,30 @@
+# Local Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Variable and secret files
+terraform.tfvars
+*.tfvars
+*.tfvars.json
+
+# Crash logs
+crash.log
+
+# Sensitive plan output
+*.tfplan
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Node or Python artifacts (if any backend scripts used)
+node_modules/
+__pycache__/

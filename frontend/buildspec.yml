@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm ci
+  build:
+    commands:
+      - echo "Building React App..."
+      - NODE_OPTIONS=--openssl-legacy-provider npm run build
+      - echo "Deploying to S3 bucket..."
+      - aws s3 sync build/ s3://frontend-vani-bucket/ --delete
+
+artifacts:
+  files:
+    - '**/*'
+    

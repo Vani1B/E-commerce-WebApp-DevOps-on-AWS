@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  build:
+    commands:
+      - echo Deploying to S3 bucket...
+      - aws s3 sync build/ s3://frontend-vani-bucket/ --delete
+
+artifacts:
+  files:
+    - '**/*'
